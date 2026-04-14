@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark light;
+  --bg: #fafafa;
+  --fg: #0c0c10;
+  --hero-name-base: #111111;
+  --muted: #51546c;
+  --card: #ffffff;
+  --border: rgb(0 0 0 / 0.08);
+  --accent: #6366f1;
+  --accent-soft: rgb(99 102 241 / 0.12);
+  --grid-line: rgb(99 102 241 / 0.06);
+}
+
+.dark {
+  color-scheme: dark;
+  --bg: #0c0c10;
+  --fg: #f7f7f8;
+  --hero-name-base: #f7f7f8;
+  --muted: #b0b2c0;
+  --card: #14141a;
+  --border: rgb(255 255 255 / 0.08);
+  --accent: #a581f8;
+  --accent-soft: rgb(129 140 248 / 0.15);
+  --grid-line: rgb(129 140 248 / 0.08);
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+body {
+  @apply antialiased;
+  background-color: var(--bg);
+  color: var(--fg);
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--fg);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .hero-name-flow {
+    color: var(--hero-name-base);
+    display: inline-block;
+    background-image:
+      radial-gradient(130% 52% at 52% -6%, color-mix(in srgb, var(--accent) 76%, transparent) 0%, transparent 72%),
+      linear-gradient(
+        180deg,
+        var(--hero-name-base) 0%,
+        color-mix(in srgb, var(--accent) 74%, var(--hero-name-base) 26%) 38%,
+        color-mix(in srgb, var(--accent) 62%, var(--hero-name-base) 38%) 54%,
+        var(--hero-name-base) 78%,
+        var(--hero-name-base) 100%
+      );
+    background-size: 170% 180%, 100% 240%;
+    background-position: 50% -22%, 50% 0%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: hero-name-flow 7.4s cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite;
+    will-change: background-position;
+  }
+
+  .hero-name-char {
+    animation-delay: var(--wave-delay, 0s);
+  }
+}
+
+@keyframes hero-name-flow {
+  0% {
+    background-position: 45% -24%, 50% 0%;
+  }
+  25% {
+    background-position: 53% -18%, 50% 38%;
+  }
+  50% {
+    background-position: 57% -12%, 50% 72%;
+  }
+  75% {
+    background-position: 49% -18%, 50% 112%;
+  }
+  100% {
+    background-position: 43% -24%, 50% 148%;
+  } 
+}
+
+.header-robot {
+  transform-origin: center;
+}
+
+.header-robot-icon {
+  opacity: 0.9;
+  filter: drop-shadow(0 1px 6px color-mix(in srgb, var(--accent) 28%, transparent));
+}
+
+.header-robot-eye-left,
+.header-robot-eye-right {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
