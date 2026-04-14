@@ -157,7 +157,6 @@ export function Skills() {
           id="skills-title"
           eyebrow="Stack"
           title="Technologies & expertise"
-          description="Grouped the same way as the source site—frontend, backend, tooling, and cloud."
         />
 
         <div className="mt-14 space-y-12">

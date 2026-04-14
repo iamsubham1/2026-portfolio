@@ -59,7 +59,6 @@ export function Experience() {
           id="experience-title"
           eyebrow="Experience"
           title="Where I’ve shipped impact"
-          description="Roles aligned with the public résumé on the reference portfolio—backend, full-stack, and product-minded frontend work."
         />
 
         <div className="relative mx-auto mt-16 max-w-3xl">
