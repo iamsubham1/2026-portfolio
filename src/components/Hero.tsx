@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { site } from "@/lib/content";
 import { registerGsap } from "@/lib/gsap-register";
 
+
 export function Hero() {
   const currentYear = new Date().getFullYear();
   const section = useRef<HTMLElement>(null);
@@ -188,13 +189,19 @@ export function Hero() {
                         {char}
                       </span>
                     ))}
+                    
                   </span>
                 ) : (
                   <span className="hero-line-inner inline-block">{w}</span>
                 )}
+
               </span>
             ))}
+
+
+
           </h1>
+
           <div className="mt-3 overflow-hidden sm:mt-4">
             <p className="hero-line-inner inline-block text-lg text-[var(--muted)] sm:text-xl">{site.title}</p>
           </div>

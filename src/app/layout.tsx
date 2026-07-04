@@ -6,6 +6,7 @@ import { SmoothScroll } from "@/components/providers/SmoothScroll";
 import { LoadingScreen } from "@/components/LoadingScreen";
 import { CursorGlow } from "@/components/CursorGlow";
 import { site } from "@/lib/content";
+import { AIAssistant } from "@/components/AI/aiAssistant";
 
 const sans = DM_Sans({
   subsets: ["latin"],
@@ -78,8 +79,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             Skip to content
           </a>
           <CursorGlow />
+          <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 ">
+            <AIAssistant />
+          </div>
           {children}
         </SmoothScroll>
+
       </body>
     </html>
   );

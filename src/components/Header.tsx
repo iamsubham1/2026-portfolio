@@ -110,8 +110,6 @@ export function Header() {
               <path d="M8.9 14.8h6.2" />
             </svg>
           </span>
-          {site.name.split(" ")[0]}
-          <span className="text-[var(--muted)]">.</span>
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
