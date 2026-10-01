@@ -7,8 +7,9 @@ const groq = new Groq({
 
 export async function askAI(messages: ChatMessage[]) {
   const completion = await groq.chat.completions.create({
-    model: "llama-3.3-70b-versatile",
+    model: "openai/gpt-oss-120b",
     temperature: 0.3,
+    reasoning_effort: "medium",
     messages,
   });
 
